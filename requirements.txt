@@ -1,0 +1,17 @@
+influxdb==5.3.1
+adafruit-circuitpython-mcp9808==3.3.23
+adafruit-circuitpython-tmp117==1.0.8
+adafruit-circuitpython-bme280==2.6.24
+adafruit-circuitpython-sht31d==1.0.9
+adafruit-circuitpython-scd30==2.2.12
+adafruit-circuitpython-tsl2591==1.0.9
+adafruit-circuitpython-veml7700==1.0.8
+adafruit-circuitpython-bh1750==1.0.6
+adafruit-circuitpython-si1145==1.0.8
+adafruit-circuitpython-ads1x15==1.0.9
+adafruit-circuitpython-busdevice==5.2.9
+RPi.GPIO==0.7.1
+adafruit-blinka==8.39.1
+smbus2==0.4.1
+
+
