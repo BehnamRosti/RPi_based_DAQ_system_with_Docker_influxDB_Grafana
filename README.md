@@ -1,4 +1,4 @@
-# RPi_based_DAQ_system_with_Docker_influxDB_Grafana
+# Raspberry Pi based DAQ system using Docker, influxDB, and Grafana
 In this totourial, one can follow steps required to make a real-time visualization of data recorded by Raspberry Pi and IoT Sensors. To achieve the goal of recording data from sensors connected to the Raspberry Pi, sending data to InfluxDB, and visualizing it with Grafana, Docker containers can streamline this process. Achieving real-time visualization of monitoring data can be accomplished by following steps.
 
 ## 1.	Install Docker on the Raspberry Pi
