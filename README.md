@@ -1,5 +1,8 @@
 # Raspberry Pi based DAQ system using Docker, influxDB, and Grafana
 In this totourial, one can follow steps required to make a real-time visualization of data recorded by Raspberry Pi and IoT Sensors. To achieve the goal of recording data from sensors connected to the Raspberry Pi, sending data to InfluxDB, and visualizing it with Grafana, Docker containers can streamline this process. Achieving real-time visualization of monitoring data can be accomplished by following steps.
+![image](https://github.com/BehnamRosti/RPi_based_DAQ_system_with_Docker_influxDB_Grafana/assets/120584793/a9f254c9-3762-4bab-8737-ddd993455eb9)
+
+
 
 ## 1.	Install Docker on the Raspberry Pi
 ```bash
@@ -50,6 +53,65 @@ ii.	Database: sensordata (as defined in docker-compose.yml)
 iii.	User/Password: admin/admin
 
 5.4	Create a dashboard to visualize your sensor data
+
+## Additional steps before running the application
+### Fix "Permission Denied" error
+
+```bash
+# Add your user to the Docker group
+sudo usermod -aG docker YOUR_PI_USER
+# NB: restart your system to apply the group changes
+```
+
+```bash
+# Check that your user is now part of the docker group!
+groups PI_USER
+# NB: In group membership list, if i2c is not there, add your user to i2c group!
+sudo usermod -aG i2c PI_USER
+```
+
+
+### Create a directory for data saving on RPi with correct permissions
+
+```bash
+# Create directory as root
+$ sudo mkdir -p [/home/YOUR_PI_USER/project/data]
+```
+
+```bash
+# Change ownership to your user
+$ sudo chown -R YOUR_PI_USER:YOUR_PI_USER /home/YOUR_PI_USER/project/data
+```
+
+```bash
+# Set permissions to ‘777’
+$ chmod -R 777 [/home/YOUR_PI_USER/project/data]
+```
+
+```bash
+# Check the permission of ‘data’
+$ ls -ld [/home/YOUR_PI_USER/project/data]
+```
+
+## Run the application
+
+```bash
+# Build and start the Docker Image
+$ docker-compose up -d --build
+```
+
+```bash
+# Confirm all container is running
+$ docker ps
+```
+
+```bash
+# Check the Logs:
+$ docker-compose logs -f
+$ docker-compose logs -f influxdb
+$ docker-compose logs -f app
+$ docker-compose logs -f grafana
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
