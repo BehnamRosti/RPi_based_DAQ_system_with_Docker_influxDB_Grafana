@@ -20,7 +20,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ## 2.	Write a Python application 
-This file is required to read sensor data and send it to InfluxDB (see app.py)
+This file is required to read sensor data and send it to InfluxDB (see app.py).
+The uploaded application is provided to use for various types of sensors like MCP9808,TMP117,BME280, SHT31D, SCD30, TSL2591, VEML7700, BH1750, SI1145, SDP610, and SDPP810. It is also able to read analog data captured from heat flux meter and convert it to digital values using ADS1115 module. 
 
 ## 3.	Package the Python application in a Docker image
 3.1	Create a Dockerfile: Write a Dockerfile that specifies the environment and dependencies for your Python application (see Dockerfile)
